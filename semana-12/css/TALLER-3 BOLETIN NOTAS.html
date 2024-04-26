@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOLETIN NOTAS</title>
+    <!-- link de sitio sweetalert mensajes más elegantes-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <center>
+        <img src="./img/logo incap.PNG" alt="" width="150" height="150">
+        <h1>BOLETIN DE NOTAS SEMESTRE A2024</h1>
+        <h2>MATERIA PAE JAVASCRIPT</h2>
+        <h3>NOTAS [1= DESEMPEÑO - 2= TALLERES DE CLASE - 3= CUESTIONARIO</h3>
+        <br><br>
+        <script>
+            let suma_nota,prom;
+            suma_nota=0
+            prom=0;
+            num=1;// contador de notas
+            // ENTRDA
+            let nombre_std=prompt("INGRESE NOMBRWE ESTUDIANTE");
+            //CICLO WHILE
+            while(num<=3) // tope maximo de 3 notas
+            {
+                let nota_std=parseFloat(prompt("INGRESE NOTA STD [1 A 5]"));
+                //TOTALIZADOR DE NOTAS
+                suma_nota+=nota_std; //suma_nota=suma_nota_std
+                //CONTADOR DE NOTA
+                num++;
+            }
+            // CALCULAR DEFINITIVA
+            prom=suma_nota/3;
+            //CONDICIONAL DE LA NOTA FINAL
+            if(prom>=3.0){
+                swal("APRECIADO ESTUDIANTE","FELICITACIONES APROBASTE MATERIA PE JAVASCRIPT","success")
+                document.write("PUEDES PASAR AL SIGUENTE NIVEL DE PROGRAMACION PHP");
+            }else{
+                swal("APRECIADO ESTUDIANTE"," REPROBASTE MATERIA PE JAVASCRIPT","error")
+                document.write("DEBES DE HACER UN CURSO REMEDIAL DE RECUPERACION");
+            }
+            //SALIDA NOTA FINAL
+            document.write("<br>"+"<br>");
+            document.write("************************************************************************"+"<br>");
+            document.write("NOTA FINAL DE MATERIA PE JAVASCRIPT ES..."+prom.toFixed(2)+"<br>");
+        </script>
+    </center>
+</body>
+</html>
